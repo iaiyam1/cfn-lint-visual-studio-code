@@ -387,22 +387,22 @@
       "type": "object",
       "properties": {
         "SecurityGroups": {
-          "description": "The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per ``awsvpcConfiguration``.\n  All specified security groups must be from the same VPC.",
+          "description": "The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified.\n  All specified security groups must be from the same VPC.",
           "type": "array",
           "items": {
             "type": "string",
             "markdownDescription": "\n\n---\n\nRequired: No  \nType: String  \nUpdate requires: No interruption\n"
           },
-          "markdownDescription": "The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per ``awsvpcConfiguration``.\n  All specified security groups must be from the same VPC.\n\n---\n\nRequired: No  \nType: Array  \nUpdate requires: No interruption\n"
+          "markdownDescription": "The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified.\n  All specified security groups must be from the same VPC.\n\n---\n\nRequired: No  \nType: Array  \nUpdate requires: No interruption\n"
         },
         "Subnets": {
-          "description": "The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per ``awsvpcConfiguration``.\n  All specified subnets must be from the same VPC.",
+          "description": "The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified.\n  All specified subnets must be from the same VPC.",
           "type": "array",
           "items": {
             "type": "string",
             "markdownDescription": "\n\n---\n\nRequired: No  \nType: String  \nUpdate requires: No interruption\n"
           },
-          "markdownDescription": "The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per ``awsvpcConfiguration``.\n  All specified subnets must be from the same VPC.\n\n---\n\nRequired: No  \nType: Array  \nUpdate requires: No interruption\n"
+          "markdownDescription": "The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified.\n  All specified subnets must be from the same VPC.\n\n---\n\nRequired: No  \nType: Array  \nUpdate requires: No interruption\n"
         },
         "AssignPublicIp": {
           "description": "Whether the task's elastic network interface receives a public IP address. The default value is ``ENABLED``.",
@@ -486,11 +486,6 @@
           "description": "The throughput to provision for a volume, in MiB/s, with a maximum of 1,000 MiB/s. This parameter maps 1:1 with the ``Throughput`` parameter of the [CreateVolume API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html) in the *Amazon EC2 API Reference*.\n  This parameter is only supported for the ``gp3`` volume type.",
           "type": "integer",
           "markdownDescription": "The throughput to provision for a volume, in MiB/s, with a maximum of 1,000 MiB/s. This parameter maps 1:1 with the ``Throughput`` parameter of the [CreateVolume API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html) in the *Amazon EC2 API Reference*.\n  This parameter is only supported for the ``gp3`` volume type.\n\n---\n\nRequired: No  \nType: Integer  \nUpdate requires: No interruption\n"
-        },
-        "VolumeInitializationRate": {
-          "description": "",
-          "type": "integer",
-          "markdownDescription": "\n\n---\n\nRequired: No  \nType: Integer  \nUpdate requires: No interruption\n"
         },
         "Iops": {
           "description": "The number of I/O operations per second (IOPS). For ``gp3``, ``io1``, and ``io2`` volumes, this represents the number of IOPS that are provisioned for the volume. For ``gp2`` volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.\n The following are the supported values for each volume type.\n  +   ``gp3``: 3,000 - 16,000 IOPS\n  +   ``io1``: 100 - 64,000 IOPS\n  +   ``io2``: 100 - 256,000 IOPS\n  \n This parameter is required for ``io1`` and ``io2`` volume types. The default for ``gp3`` volumes is ``3,000 IOPS``. This parameter is not supported for ``st1``, ``sc1``, or ``standard`` volume types.\n This parameter maps 1:1 with the ``Iops`` parameter of the [CreateVolume API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html) in the *Amazon EC2 API Reference*.",
